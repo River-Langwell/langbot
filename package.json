@@ -3,5 +3,8 @@
     "discord.js": "^14.25.1",
     "nodejs": "^0.0.0",
     "pkg": "^5.8.1"
+  },
+  "scripts": {
+    "start": "index.ts"
   }
 }

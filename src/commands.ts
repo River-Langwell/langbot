@@ -15,7 +15,12 @@ const BUILD = new SlashCommandBuilder()
     .addSubcommand(subcommand =>
         subcommand
             .setName('language')
-            .setDescription('create a new language option'));
+            .setDescription('create a new language option'))
+    .addSubcommand(subcommand =>
+        subcommand
+            .setName('category')
+            .setDescription('create a new (language) category')
+    );
 
 export const MODIFY = {
     name: 'mod',
@@ -38,10 +43,6 @@ export const PING = {
 const ALL_COMMANDS = [BUILD, MODIFY, INVITE, PING];
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN!);
-
-
-
-
 
 try {
     console.log('Started refeshing application (/) commands.');

@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import 'discord.js';
-import 'googleapis';
 
 import { Client, Events, GatewayIntentBits, ModalSubmitInteraction, RoleManager } from 'discord.js';
 
