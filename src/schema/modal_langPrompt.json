@@ -1,0 +1,189 @@
+{
+    "type": 9,
+    "data": {
+        "custom_id": "add_language_modal",
+        "title": "Add A Language",
+        "components": [
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "native_language",
+                        "label": "Name of Language (native)",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the name of the language in its own language (e.g., Spanish = español)",
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "english_language",
+                        "label": "Name of Language (English)",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the name of the language in English (e.g., Spanish = Spanish)",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "two-letter-code",
+                        "label": "Language Abbreviation (ISO 639)",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 5,
+                        "placeholder": "Enter the two (or three) letter code for the language.  Refer to ISO 639.",
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "i_speak_language",
+                        "label": "\"I speak...\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"I speak [language]\"",
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "general_translation",
+                        "label": "\"General\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"general\"",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "expedition_chat_translation",
+                        "label": "\"Expedition Chat\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"expedition chat\"",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "agreement_terms_translation",
+                        "label": "\"Agreement Terms\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"agreement terms\"",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "north_translation",
+                        "label": "\"North\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"north\"",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "south_translation",
+                        "label": "\"South\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"south\"",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "east_translation",
+                        "label": "\"East\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"east\"",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "west_translation",
+                        "label": "\"west\"",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the translation of \"west\"",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 4,
+                        "custom_id": "default_emoji",
+                        "label": "Default Emoji",
+                        "style": 1,
+                        "min_length": 1,
+                        "max_length": 100,
+                        "placeholder": "Enter the name of the default emoji",
+                        "required": false
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "langs-bot_language_data",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "language": {
+            "type": "object",
+            "properties": {
+                "englishTranslation": {
+                    "type": "string"
+                },
+                "nativeTranslation": {
+                    "type": "string"
+                },
+                "two-letter-abbr": {
+                    "type": "string"
+                },
+                "i_speak": {
+                    "type": "string"
+                },
+                "general": {
+                    "type": "string"
+                },
+                "expedition_chat": {
+                    "type": "string"
+                },
+                "agreement_terms": {
+                    "type": "string"
+                },
+                "north": {
+                    "type": "string"
+                },
+                "south": {
+                    "type": "string"
+                },
+                "east": {
+                    "type": "string"
+                },
+                "west": {
+                    "type": "string"
+                },
+                "default_emoji": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "nativeTranslation",
+                "north",
+                "south",
+                "east",
+                "west"
+            ]
+        }
+    }
+}
