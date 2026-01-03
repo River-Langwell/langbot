@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { ApplicationCommand, REST, Routes, SlashCommandBuilder } from 'discord.js';
 
+
 const BUILD = new SlashCommandBuilder()
     .setName('create')
     .setDescription('create as selected')
@@ -22,6 +23,14 @@ const BUILD = new SlashCommandBuilder()
             .setDescription('create a new (language) category')
     );
 
+    
+
+export const ADD_LANGUAGE = {
+    name: 'add_language',
+    description: "adds a language section",
+    type: 1
+}
+
 export const MODIFY = {
     name: 'mod',
     description: 'Replies with modify!',
@@ -40,7 +49,9 @@ export const PING = {
     type: 1
 };
 
-const ALL_COMMANDS = [BUILD, MODIFY, INVITE, PING];
+const ALL_COMMANDS = [BUILD, MODIFY, INVITE, PING, ADD_LANGUAGE];
+
+
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN!);
 

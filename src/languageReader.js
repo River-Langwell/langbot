@@ -1,0 +1,43 @@
+const { fs, open } = require('node:fs');
+
+class LanguageLibrary {
+    constructor() {
+        this.map = this.getLibrary();
+    }
+
+    getLibrary() {
+        map = new Map();
+        file = open('./languageValues.csv');
+        for (const line of file.readLines()) {
+            let l = line.split(',')[0];
+
+            map.set(l, new languageEntry(line.split(',')));
+        }
+
+        return map;
+    }
+}
+
+class languageEntry {
+    constructor(array) {
+        this.language_en = array[0];
+        this.language = array[1];
+        this.iso_abbr = array[2];
+        this.statement = array[3];
+        this.general = array[4];
+        this.expedition = array[5];
+        this.agreement = array[6];
+        this.north = array[7];
+        this.south = array[8];
+        this.east = array[9];
+        this.west = array[10];
+    }
+
+    //getter ===> get variableName(){ return; }
+    //method ===> methodName() { return; }
+}
+
+
+function AddLanguage() {
+
+}

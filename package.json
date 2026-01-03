@@ -1,14 +1,15 @@
-  {
+{
     "name": "langbot",
     "version": "0.0.1",
     "type": "module",
     "main": "index.ts",
     "scripts": {
-      "start": "node index.js"
+        "start": "node index.js"
     },
     "dependencies": {
-      "discord.js": "^14.25.1",
-      "nodejs": "^0.0.0",
-      "pkg": "^5.8.1"
+        "discord.js": "^14.25.1",
+        "dotenv": "^17.2.3",
+        "nodejs": "^0.0.0",
+        "pkg": "^5.8.1"
     }
-  }
+}

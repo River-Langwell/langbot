@@ -8,7 +8,7 @@ export async function InstallGlobalCommands(appId, commands) {
     } catch (err) { console.error(err); }
 }
 
-export async function DiscordRequest(endpoint: string, options) {
+export async function DiscordRequest(endpoint, options) {
     const url = DISCORD_BASE_URL + endpoint;
     if (options.body) options.body = JSON.stringify(options.body);
 

@@ -9,9 +9,10 @@ const langModal2 = new ModalBuilder()
 const langModal3 = new ModalBuilder()
     .setCustomId('add_language_modal_screen3')
     .setTitle('Add a language option');
+
+
 const native_language = new TextInputBuilder()
     .setCustomId('native_language')
-    .setLabel('Name of Language (native)')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(100)
@@ -19,7 +20,6 @@ const native_language = new TextInputBuilder()
     .setRequired(true);
 const english_language = new TextInputBuilder()
     .setCustomId('english_language')
-    .setLabel('Name of Language (English)')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(100)
@@ -27,7 +27,6 @@ const english_language = new TextInputBuilder()
     .setRequired(true);
 const two_letter_abbr = new TextInputBuilder()
     .setCustomId('two_letter_code')
-    .setLabel('Language Abbreviation (ISO 639)')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(5)
@@ -35,7 +34,6 @@ const two_letter_abbr = new TextInputBuilder()
     .setRequired(true);
 const i_speak_language = new TextInputBuilder()
     .setCustomId('i_speak_language')
-    .setLabel('"\"I speak...\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -45,7 +43,6 @@ const i_speak_language = new TextInputBuilder()
 
 const general_translation = new TextInputBuilder()
     .setCustomId('general_translation')
-    .setLabel('"\"General\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -53,7 +50,6 @@ const general_translation = new TextInputBuilder()
     .setRequired(false);
 const expedition_chat_translation = new TextInputBuilder()
     .setCustomId('expedition_chat_translation')
-    .setLabel('"\"Expedition Chat\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -61,7 +57,6 @@ const expedition_chat_translation = new TextInputBuilder()
     .setRequired(false);
 const agreement_terms_translation = new TextInputBuilder()
     .setCustomId('agreement_terms_translation')
-    .setLabel('"\"Agreement Terms\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -71,7 +66,6 @@ const agreement_terms_translation = new TextInputBuilder()
 
 const north_translation = new TextInputBuilder()
     .setCustomId('north_translation')
-    .setLabel('"\"North\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -79,7 +73,6 @@ const north_translation = new TextInputBuilder()
     .setRequired(false);
 const south_translation = new TextInputBuilder()
     .setCustomId('south_translation')
-    .setLabel('"\"South\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -87,7 +80,6 @@ const south_translation = new TextInputBuilder()
     .setRequired(false);
 const east_translation = new TextInputBuilder()
     .setCustomId('east_translation')
-    .setLabel('"\"East\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -95,7 +87,6 @@ const east_translation = new TextInputBuilder()
     .setRequired(false);
 const west_translation = new TextInputBuilder()
     .setCustomId('west_translation')
-    .setLabel('"\"West\""')
     .setStyle(1)
     .setMinLength(1)
     .setMaxLength(200)
@@ -106,9 +97,11 @@ const nativeActRow = new ActionRowBuilder().addComponents(native_language);
 const englishActRow = new ActionRowBuilder().addComponents(english_language);
 const two_letterActRow = new ActionRowBuilder().addComponents(two_letter_abbr);
 const i_speakActRow = new ActionRowBuilder().addComponents(i_speak_language);
+
 const generalActRow = new ActionRowBuilder().addComponents(general_translation);
 const expoChatActRow = new ActionRowBuilder().addComponents(expedition_chat_translation);
 const agreementActRow = new ActionRowBuilder().addComponents(agreement_terms_translation);
+
 const northActRow = new ActionRowBuilder().addComponents(north_translation);
 const southActRow = new ActionRowBuilder().addComponents(south_translation);
 const eastActRow = new ActionRowBuilder().addComponents(east_translation);
