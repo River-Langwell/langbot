@@ -8,9 +8,10 @@ export class LanguageLibrary {
     getLibrary() {
         var map = new Map();
         const file = fs.readFileSync(`${import.meta.dirname}/languageValues.csv`, 'utf-8');
-        console.log(file);
-        
+        //console.log(file);
+
         file.split(/r?\n/).forEach(line => {
+            console.log(line);
             map.set(line.split(',')[0], new languageEntry(line.split(',')));
         });
 
