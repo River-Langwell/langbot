@@ -1,7 +1,7 @@
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
-import { token } from './config.json';
+import { token } from './config.json' with {type: 'json'};
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
