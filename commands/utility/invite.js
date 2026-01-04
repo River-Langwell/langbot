@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from 'discord.js';
-import { applicationId } from './config.json';
+import { applicationId } from '~langbot/config.json';
 
 module.exports = {
     data: new SlashCommandBuilder().setName('invite').setDescription('Replies with a bot invite'),
