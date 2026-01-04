@@ -15,6 +15,10 @@ const discord_baseurl = config.discord_baseurl;
 
 const langLibrary = new LanguageLibrary();
 
+langLibrary.map.forEach(langLib => {
+	console.log(langLib.lang_en);
+})
+
 client.commands = new Collection();
 const foldersPath = path.join('/home/langbot_user/langbot/', 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
