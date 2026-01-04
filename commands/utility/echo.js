@@ -18,6 +18,6 @@ export async function execute(interaction) {
     await interaction.reply({
         channel: channel,
         content: echo,
-        MessageFlags: [isEphemeral]
+        flags: [isEphemeral]
         });
 }
