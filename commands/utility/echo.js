@@ -15,6 +15,6 @@ export async function execute(interaction) {
     await interaction.reply({
         channel: channel,
         content: echo,
-        MessageFlags: new MessageFlags.Ephemeral(isEphemeral)
+        MessageFlags: MessageFlags.Ephemeral(isEphemeral)
     });
 }
