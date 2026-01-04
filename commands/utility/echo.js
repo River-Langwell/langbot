@@ -1,4 +1,4 @@
-import { MessageFlags, SlashCommandBuilder } from 'discord.js';
+import { MessageFlags, MessageFlagsBitField, SlashCommandBuilder } from 'discord.js';
 
 export const data = new SlashCommandBuilder()
     .setName('echo')
@@ -12,9 +12,12 @@ export async function execute(interaction) {
     const channel = interaction.options.getChannel('channel');
     const isEphemeral = interaction.options.getBoolean('ephemeral');
 
+    var messFlags = new MessageFlagsBitField();
+    if(isEphemeral){messFlags.add("Ephemeral");}
+
     await interaction.reply({
         channel: channel,
         content: echo,
-        MessageFlags: MessageFlags.Ephemeral(isEphemeral)
-    });
+        MessageFlags: messFlags
+        });
 }
