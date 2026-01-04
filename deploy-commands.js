@@ -1,5 +1,5 @@
 import { REST, Routes } from 'discord.js';
-import { clientId as clientId, guildId as guildId, token as token } from './config.json' with {type: "json"};
+const { clientId, guildId, token } = require('./config.json');
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
