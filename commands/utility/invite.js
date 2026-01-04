@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from 'discord.js';
 import { applicationId } from './config.json';
 
-export const invite = {
+module.exports = {
 
     data: new SlashCommandBuilder().setName('invite').setDescription('Replies with a bot invite'),
     async execute(interaction) {
