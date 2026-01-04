@@ -1,4 +1,4 @@
-const { fs, open } = require('node:fs');
+import { fs, open } from ('node:fs');
 
 class LanguageLibrary {
     constructor() {
