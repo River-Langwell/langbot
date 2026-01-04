@@ -7,7 +7,7 @@ export class LanguageLibrary {
 
     getLibrary() {
         var map = new Map();
-        file = readFile('./languageValues.csv');
+        var file = readFile('./languageValues.csv');
         for (const line of file.readLines()) {
             let l = line.split(',')[0];
 
