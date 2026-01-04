@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { LanguageLibrary, languageEntry } from './src/languageReader.js';
-import config from `${import.meta.dirname}/config.json` with {type: 'json'};
+import config from '${import.meta.dirname}/config.json' with {type: 'json'};
 
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
