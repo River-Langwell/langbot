@@ -1,7 +1,13 @@
 import { REST, Routes } from 'discord.js';
-const { clientId, guildId, token } = require('./config.json');
+import config from './config.json' with {type: "json"};
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
+
+
+const clientId = config.clientId;
+const guildId = config.guildId;
+const token = config.guildId;
+const discord_baseurl = config.discord_baseurl;
 
 const commands = [];
 // Grab all the command folders from the commands directory you created earlier
