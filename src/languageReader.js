@@ -1,19 +1,17 @@
 import fs, { readFile } from 'node:fs';
 
 export class LanguageLibrary {
-     constructor() {
+    constructor() {
         this.map = this.getLibrary();
     }
 
     getLibrary() {
         var map = new Map();
         const file = fs.readFileSync(`${import.meta.dirname}/languageValues.csv`, 'utf-8');
-        //var file = readFile('./languageValues.csv');
-        for (const line of file.readLines()) {
-            let l = line.split(',')[0];
+        file.split(/r?\n/).forEach(line => {
+            map.set(line.split(',')[0], new languageEntry(line.split(',')));
+        });
 
-            map.set(l, new languageEntry(line.split(',')));
-        }
         return map;
     }
 }
