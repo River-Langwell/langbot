@@ -1,9 +1,14 @@
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
-import { token } from '/home/langbot_user/langbot/config.json' with {type: 'json'};
+import { config } from '/home/langbot_user/langbot/config.json' with {type: 'json'};
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+const clientId = config.clientId;
+const guildId = config.guildId;
+const token = config.token;
+const discord_baseurl = config.discord_baseurl;
 
 client.commands = new Collection();
 const foldersPath = join(__dirname, 'commands');
