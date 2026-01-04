@@ -25,7 +25,7 @@ for (const folder of commandFolders) {
         console.log(filePath);
 
         const command = import(filePath);
-        console.log(command.body);
+        console.log(command.data);
 
         if ('data' in command && 'execute' in command) {
             commands.push(command.data.toJSON());
