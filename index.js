@@ -3,12 +3,17 @@ import path from 'node:path';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import config from '/home/langbot_user/langbot/config.json' with {type: 'json'};
 
+import { LanguageLibrary, languageEntry } from './src/languageReader';
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const clientId = config.clientId;
 const guildId = config.guildId;
 const token = config.token;
 const discord_baseurl = config.discord_baseurl;
+
+
+const langLibrary = new LanguageLibrary();
 
 client.commands = new Collection();
 const foldersPath = path.join('/home/langbot_user/langbot/', 'commands');

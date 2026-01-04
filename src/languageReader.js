@@ -1,7 +1,7 @@
-import { fs, open } from ('node:fs');
+import fs from ('node:fs');
 
-class LanguageLibrary {
-    constructor() {
+export class LanguageLibrary {
+     constructor() {
         this.map = this.getLibrary();
     }
 
@@ -13,12 +13,11 @@ class LanguageLibrary {
 
             map.set(l, new languageEntry(line.split(',')));
         }
-
         return map;
     }
 }
 
-class languageEntry {
+export class languageEntry {
     constructor(array) {
         this.language_en = array[0];
         this.language = array[1];
@@ -36,7 +35,6 @@ class languageEntry {
     //getter ===> get variableName(){ return; }
     //method ===> methodName() { return; }
 }
-
 
 function AddLanguage() {
 
