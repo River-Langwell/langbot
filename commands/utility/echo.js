@@ -1,4 +1,4 @@
-import { MessageFlags, MessageFlagsBitField, SlashCommandBuilder } from 'discord.js';
+import { ActivityFlagsBitField, MessageFlags, MessageFlagsBitField, SlashCommandBuilder } from 'discord.js';
 
 export const data = new SlashCommandBuilder()
     .setName('echo')
@@ -10,14 +10,14 @@ export const data = new SlashCommandBuilder()
 export async function execute(interaction) {
     const echo = interaction.options.getString('input');
     const channel = interaction.options.getChannel('channel');
-    const ephemChoice = interaction.options.getString('ephemeral');
+    const ephemChoice = interaction.options.getBoolean('ephemeral');
 
-    var isEphemeral = 0;
-    if(ephemChoice = "True"){isEphemeral = 64;}
+    var isEphemeral = new MessageFlagsBitField();
+    if (ephemChoice) { isEphemeral.bitfield = 64; }
 
     await interaction.reply({
         channel: channel,
         content: echo,
-        flags: [isEphemeral]
-        });
+        flags: isEphemeral
+    });
 }
