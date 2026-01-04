@@ -4,13 +4,15 @@ export class LanguageLibrary {
     constructor() {
 
         this.map = this.getLibrary();
-        this.map.keys.forEach(key => {
+
+        this.map.forEach((i, key => {
             console.log(key);
-        })
+        }));
     }
 
     getLibrary() {
         var map = new Map();
+
         const file = fs.readFileSync(`${import.meta.dirname}/languageValues.csv`, 'utf-8');
         //console.log(file);
 
