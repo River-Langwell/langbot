@@ -1,7 +1,7 @@
-import { readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
-import config  from '/home/langbot_user/langbot/config.json' with {type: 'json'};
+import config from '/home/langbot_user/langbot/config.json' with {type: 'json'};
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -11,15 +11,15 @@ const token = config.token;
 const discord_baseurl = config.discord_baseurl;
 
 client.commands = new Collection();
-const foldersPath = join(__dirname, 'commands');
-const commandFolders = readdirSync(foldersPath);
+const foldersPath = path.join('/home/langbot_user/langbot/', 'commands');
+const commandFolders = fs.readdirSync(foldersPath);
 
 for (const folder of commandFolders) {
-	const commandsPath = join(foldersPath, folder);
-	const commandFiles = readdirSync(commandsPath).filter((file) => file.endsWith('.js'));
+	const commandsPath = path.join(foldersPath, folder);
+	const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith('.js'));
 	for (const file of commandFiles) {
-		const filePath = join(commandsPath, file);
-		const command = require(filePath);
+		const filePath = path.join(commandsPath, file);
+		const command = fs.require(filePath);
 		if ('data' in command && 'execute' in command) {
 			client.commands.set(command.data.name, command);
 		} else {
@@ -28,12 +28,12 @@ for (const folder of commandFolders) {
 	}
 }
 
-const eventsPath = join(__dirname, 'events');
-const eventFiles = readdirSync(eventsPath).filter((file) => file.endsWith('.js'));
+const eventsPath = path.join('/home/langbot_user/langbot/', 'events');
+const eventFiles = fs.readdirSync(eventsPath).filter((file) => file.endsWith('.js'));
 
 for (const file of eventFiles) {
-	const filePath = join(eventsPath, file);
-	const event = require(filePath);
+	const filePath = path.join(eventsPath, file);
+	const event = await require(filePath);
 	if (event.once) {
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {

@@ -19,6 +19,7 @@ for (const folder of commandFolders) {
     const commandsPath = path.join(foldersPath, folder);
     console.log(commandsPath);
     const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith('.js'));
+    
     // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
     for (const file of commandFiles) {
         const filePath = path.join(commandsPath, file);
@@ -37,8 +38,6 @@ for (const folder of commandFolders) {
         }
     }
 }
-
-
 
 // Construct and prepare an instance of the REST module
 const rest = new REST().setToken(token);
