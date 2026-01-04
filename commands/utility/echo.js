@@ -13,7 +13,7 @@ export async function execute(interaction) {
     const isEphemeral = interaction.options.getString('ephemeral');
 
     var messFlags = new MessageFlagsBitField();
-    if(isEphemeral = "True"){messFlags.add("Ephemeral");}
+    if(isEphemeral = "True"){messFlags.add(MessageFlags.Ephemeral);}
 
     await interaction.reply({
         channel: channel,
