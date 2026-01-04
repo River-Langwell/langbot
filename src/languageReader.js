@@ -11,7 +11,7 @@ export class LanguageLibrary {
         //console.log(file);
 
         file.split(/r?\n/).forEach(line => {
-            console.log(line);
+            //console.log(line);
             map.set(line.split(',')[0], new languageEntry(line.split(',')));
         });
 
@@ -21,6 +21,7 @@ export class LanguageLibrary {
 
 export class languageEntry {
     constructor(array) {
+        console.log(array[0]);
         this.language_en = array[0];
         this.language = array[1];
         this.iso_abbr = array[2];
