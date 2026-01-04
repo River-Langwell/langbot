@@ -7,7 +7,8 @@ export class LanguageLibrary {
 
     getLibrary() {
         var map = new Map();
-        var file = readFile('./languageValues.csv');
+        const file = fs.ReadFileSync('./languageValues.csv', 'utf-8');
+        //var file = readFile('./languageValues.csv');
         for (const line of file.readLines()) {
             let l = line.split(',')[0];
 
