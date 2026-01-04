@@ -16,7 +16,7 @@ const discord_baseurl = config.discord_baseurl;
 const langLibrary = new LanguageLibrary();
 
 langLibrary.map.forEach(langLib => {
-	console.log(langLib.lang_en);
+	console.log(langLib.language_en);
 })
 
 client.commands = new Collection();
