@@ -3,6 +3,7 @@ import fs, { readFile } from 'node:fs';
 export class LanguageLibrary {
     constructor() {
         this.map = this.getLibrary();
+        console.log(map[0].language);
     }
 
     getLibrary() {
@@ -21,7 +22,7 @@ export class LanguageLibrary {
 
 export class languageEntry {
     constructor(array) {
-        console.log(array[0]);
+        //console.log(array[0]);
         this.language_en = array[0];
         this.language = array[1];
         this.iso_abbr = array[2];
