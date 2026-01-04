@@ -3,7 +3,7 @@ import path from 'node:path';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import config from '/home/langbot_user/langbot/config.json' with {type: 'json'};
 
-import { LanguageLibrary, languageEntry } from './src/languageReader';
+import { LanguageLibrary, languageEntry } from './src/languageReader.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
