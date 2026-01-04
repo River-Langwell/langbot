@@ -8,6 +8,13 @@ export const data = new SlashCommandBuilder()
     .addBooleanOption((option) => option.setName('ephemeral').setDescription('Whether or not the echo should be ephemeral')
     );
 export async function execute(interaction) {
-    console.log(interaction);
-    await interaction.reply(interaction.reply[0]);
+    const echo = interaction.options.getString('input');
+    const channel = interaction.options.getChannel('channel');
+    const isEphemeral = interaction.options.getBoolean('ephemeral');
+
+    await interaction.reply({
+        channel: channel,
+        content: echo,
+        ephemeral: isEphemeral
+    });
 }
