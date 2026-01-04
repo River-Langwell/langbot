@@ -1,5 +1,5 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import { fs } from 'node:fs';
+import { path } from 'node:path';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import config from '/home/langbot_user/langbot/config.json' with {type: 'json'};
 
