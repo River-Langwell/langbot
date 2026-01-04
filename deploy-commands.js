@@ -32,11 +32,12 @@ for (const folder of commandFolders) {
             console.log(`[SUCCESS] The command at ${filePath} has been pushed to array commands.`);
         } else {
 
-            if (!'data' in command) { console.log(`[WARNING] The command at ${filePath} is missing a required "data" property.`); }
-            if (!'execute' in command) { console.log(`[WARNING] The command at ${filePath} is missing a required "execute" property.`); }
+            console.log(`[WARNING] The command at ${filePath} is missing a required "data" property.`);
+            console.log(`[WARNING] The command at ${filePath} is missing a required "execute" property.`);
         }
     }
 }
+
 
 
 // Construct and prepare an instance of the REST module
