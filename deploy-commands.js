@@ -6,7 +6,7 @@ import path from 'node:path';
 
 const clientId = config.clientId;
 const guildId = config.guildId;
-const token = config.guildId;
+const token = config.token;
 const discord_baseurl = config.discord_baseurl;
 
 const commands = [];
@@ -22,10 +22,10 @@ for (const folder of commandFolders) {
     // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
     for (const file of commandFiles) {
         const filePath = path.join(commandsPath, file);
-        console.log(filePath);
+        //console.log(filePath);
 
         const command = await import(filePath);
-        console.log(command);
+        //console.log(command);
 
         if ('data' in command && 'execute' in command) {
             commands.push(command.data.toJSON());
