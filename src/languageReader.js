@@ -3,7 +3,7 @@ import fs, { readFile } from 'node:fs';
 export class LanguageLibrary {
     constructor() {
         this.map = this.getLibrary();
-        console.log(map[0].language);
+        console.log(this.map[0].language);
     }
 
     getLibrary() {
