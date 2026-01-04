@@ -26,11 +26,8 @@ for (const folder of commandFolders) {
             commands.push(command.data.toJSON());
         } else {
 
-            if ('data' in command) { console.log(`[WARNING] The command at ${filePath} is missing a required "data" property.`); }
-            if ('execute' in command) { console.log(`[WARNING] The command at ${filePath} is missing a required "execute" property.`); }
-
-
-
+            if (!'data' in command) { console.log(`[WARNING] The command at ${filePath} is missing a required "data" property.`); }
+            if (!'execute' in command) { console.log(`[WARNING] The command at ${filePath} is missing a required "execute" property.`); }
         }
     }
 }
