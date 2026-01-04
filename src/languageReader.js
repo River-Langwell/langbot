@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+import fs, { readFile } from 'node:fs';
 
 export class LanguageLibrary {
      constructor() {
@@ -7,7 +7,7 @@ export class LanguageLibrary {
 
     getLibrary() {
         var map = new Map();
-        file = fs.open('./languageValues.csv');
+        file = readFile('./languageValues.csv');
         for (const line of file.readLines()) {
             let l = line.split(',')[0];
 
