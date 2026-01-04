@@ -1,4 +1,4 @@
-import { SlashCommandBuilder } from 'discord.js';
+import { MessageFlags, SlashCommandBuilder } from 'discord.js';
 
 export const data = new SlashCommandBuilder()
     .setName('echo')
@@ -15,6 +15,6 @@ export async function execute(interaction) {
     await interaction.reply({
         channel: channel,
         content: echo,
-        ephemeral: isEphemeral
+        MessageFlags: new MessageFlags.Ephemeral(isEphemeral)
     });
 }
