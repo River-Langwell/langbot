@@ -29,6 +29,7 @@ for (const folder of commandFolders) {
 
         if ('data' in command && 'execute' in command) {
             commands.push(command.data.toJSON());
+            console.log(`[SUCCESS] The command at ${filePath} has been pushed to array commands.`);
         } else {
 
             if (!'data' in command) { console.log(`[WARNING] The command at ${filePath} is missing a required "data" property.`); }
