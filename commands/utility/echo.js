@@ -1,4 +1,5 @@
 import { SlashCommandBuilder } from 'discord.js';
+
 export const echo = {
     data: new SlashCommandBuilder()
         .setName('echo')
