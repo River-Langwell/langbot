@@ -5,9 +5,9 @@ export class LanguageLibrary {
 
         this.map = this.getLibrary();
 
-        this.map.forEach((value, key => {
+        this.map.forEach(value, key => {
             console.log(key);
-        }));
+        });
     }
 
     getLibrary() {
