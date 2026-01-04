@@ -2,8 +2,11 @@ import fs, { readFile } from 'node:fs';
 
 export class LanguageLibrary {
     constructor() {
+
         this.map = this.getLibrary();
-        console.log(this.map.values[0]);
+        this.map.keys.forEach(key => {
+            console.log(key);
+        })
     }
 
     getLibrary() {
