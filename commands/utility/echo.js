@@ -7,6 +7,7 @@ export const data = new SlashCommandBuilder()
     .addChannelOption((option) => option.setName('channel').setDescription('The channel to echo into'))
     .addBooleanOption((option) => option.setName('ephemeral').setDescription('Whether or not the echo should be ephemeral')
     );
+    
 export async function execute(interaction) {
     await interaction.reply(interaction.option[0]);
 }
