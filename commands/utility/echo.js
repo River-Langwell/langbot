@@ -10,14 +10,14 @@ export const data = new SlashCommandBuilder()
 export async function execute(interaction) {
     const echo = interaction.options.getString('input');
     const channel = interaction.options.getChannel('channel');
-    const isEphemeral = interaction.options.getString('ephemeral');
+    const ephemChoice = interaction.options.getString('ephemeral');
 
-    var messFlags = new MessageFlagsBitField();
-    if(isEphemeral = "True"){messFlags.add(MessageFlags.Ephemeral);}
+    var isEphemeral = 0;
+    if(ephemChoice = "True"){isEphemeral = 64;}
 
     await interaction.reply({
         channel: channel,
         content: echo,
-        MessageFlags: messFlags
+        MessageFlags: [isEphemeral]
         });
 }
