@@ -12,7 +12,7 @@ export const data = new SlashCommandBuilder()
     .addSubcommand((subcommand) => subcommand.setName('server').setDescription('Info about the server'));
 
 
-async function execute(interaction) {
+export async function execute(interaction) {
     await interaction.reply('');
 }
 

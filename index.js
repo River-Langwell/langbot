@@ -4,7 +4,6 @@ import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { LanguageLibrary, languageEntry } from './src/languageReader.js';
 import config from './config.json' with {type: 'json'};
 
-
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const clientId = config.clientId;
@@ -16,7 +15,7 @@ const discord_baseurl = config.discord_baseurl;
 const langLibrary = new LanguageLibrary();
 
 langLibrary.map.forEach(langLib => {
-	console.log(langLib.language_en);
+	//console.log(langLib.language_en);
 })
 
 client.commands = new Collection();
