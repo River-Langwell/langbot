@@ -32,6 +32,6 @@ export async function execute(interaction) {
     }
     catch (error) { }
     await interaction.followUp({
-        content: response
+        content: interaction.options.getChannel('channel').name
     });
 }
