@@ -14,9 +14,12 @@ export async function execute(interaction) {
 
         var channel = new ChannelManager();
 
+        var response = "";
+
         const givenChannel = interaction.options.getChannel('channel');
         if (givenChannel != null) {
 
+            response = givenChannel.channelId;
         }
 
 
@@ -27,5 +30,7 @@ export async function execute(interaction) {
 
     }
     catch (error) { }
-    await interaction.followUp('');
+    await interaction.followUp({
+        content: response
+    });
 }
