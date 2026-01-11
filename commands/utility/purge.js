@@ -35,7 +35,7 @@ export async function execute(interaction) {
         if (channel != undefined) { channelList.push(channel); }
 
     }
-    catch (error) { }
+    catch (error) { console.log(error) }
 
     await interaction.followUp({
         content: interaction.options.getChannel('channel').name
