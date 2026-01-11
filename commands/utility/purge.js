@@ -17,6 +17,8 @@ export async function execute(interaction) {
         var response = "";
 
         const givenChannel = interaction.options.getChannel('channel');
+        console.log(givenChannel);
+        
         if (givenChannel != null) {
 
             response = givenChannel.channelId;
