@@ -9,14 +9,19 @@ export async function execute(interaction) {
     await interaction.reply('Beginning purge.');
 
     try {
+
+        console.log(interaction.guildId);
+        console.log()
         const guildId = interaction.guildId;
-        const guild = Guild.fetch(guildId);
+        const guild = new Guild.fetch(guildId);
 
         var channel = new ChannelManager();
 
         var response = "";
 
         console.log(interaction.options.getChannel('channel').name);
+
+        guild
 
         if (givenChannel != null) {
 
@@ -31,6 +36,7 @@ export async function execute(interaction) {
 
     }
     catch (error) { }
+
     await interaction.followUp({
         content: interaction.options.getChannel('channel').name
     });
