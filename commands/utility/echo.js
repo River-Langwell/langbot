@@ -15,9 +15,17 @@ export async function execute(interaction) {
     var isEphemeral = new MessageFlagsBitField();
     if (ephemChoice) { isEphemeral.bitfield = 64; }
 
-    await interaction.reply({
-        channel: channel,
-        content: echo,
-        flags: isEphemeral
-    });
+    if (channel != interaction.channel) {
+        await interaction.reply({
+            content: `Message ${echo} is sent in channel ${channel.name}`
+        });
+    }
+    else {
+        await interaction.reply({
+            content: echo,
+            flags: isEphemeral
+        });
+    }
+
+
 }
