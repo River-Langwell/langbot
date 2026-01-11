@@ -1,4 +1,4 @@
-import { Guild, GuildChannelManager, ChannelManager } from 'discord.js';
+import { Guild, GuildChannelManager, ChannelManager, SlashCommandBuilder } from 'discord.js';
 
 export const data = new SlashCommandBuilder()
     .setName('purge')
