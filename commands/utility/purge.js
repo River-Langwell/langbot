@@ -9,6 +9,9 @@ export async function execute(interaction) {
     await interaction.reply('Beginning purge.');
 
     try {
+
+        const client = interaction.client;
+        
         console.log(interaction.guildId);
 
         const guild = await client.guilds.fetch(interaction.guildId);
