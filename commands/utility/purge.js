@@ -23,9 +23,9 @@ export async function execute(interaction) {
         const channelManager = guild.channels;
 
         channelManager.fetch()
-            .then(channel => {
-                console.log(channel.name)
-            });
+            .then(channels.array.forEach(element => {
+                console.log(element.name)
+            }));
 
         var channelList = [];
         if (channel != undefined) { channelList.push(channel); }
