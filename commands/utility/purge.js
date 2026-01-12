@@ -19,7 +19,7 @@ export async function execute(interaction) {
 
         console.log(guild.name);
 
-        const channels = guild.channels.fetch().array();
+        const channels = guild.channels.fetch();
 
         channels.forEach(c => {
             console.log(c.name);
