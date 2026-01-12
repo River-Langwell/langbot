@@ -18,10 +18,7 @@ export async function execute(interaction) {
 
         console.log(guild.name);
 
-        console.log(guild.channels.fetch());
-
-        var channelList = [];
-        if (channel != undefined) { channelList.push(channel); }
+        console.log(guild.channels.fetch().name);
 
     }
     catch (error) { console.log(error) }
