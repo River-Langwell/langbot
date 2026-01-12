@@ -9,13 +9,11 @@ export async function execute(interaction) {
     await interaction.reply('Beginning purge.');
 
     try {
-
         console.log(interaction.guildId);
-        console.log()
-        const guildId = interaction.guildId;
-        var guild = new Guild();
-        guild.fetch(guildId);
 
+        const guild = await client.guilds.fetch(interaction.guildId);
+
+        console.log(guild.name);
         var channel = new ChannelManager();
 
         var response = "";
@@ -28,7 +26,6 @@ export async function execute(interaction) {
 
             response = givenChannel.channelId;
         }
-
 
         const ChanManager = new GuildChannelManager(guildId);
 
