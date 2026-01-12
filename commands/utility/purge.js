@@ -1,4 +1,4 @@
-import { Guild, GuildChannelManager, ChannelManager, SlashCommandBuilder } from 'discord.js';
+import { SlashCommandBuilder } from 'discord.js';
 
 export const data = new SlashCommandBuilder()
     .setName('purge')
@@ -11,26 +11,20 @@ export async function execute(interaction) {
     try {
 
         const client = interaction.client;
-        
+
         console.log(interaction.guildId);
 
         const guild = await client.guilds.fetch(interaction.guildId);
 
         console.log(guild.name);
-        var channel = new ChannelManager();
 
-        var response = "";
 
-        console.log(interaction.options.getChannel('channel').name);
 
-        guild
+        const channelManager = guild.channels;
 
-        if (givenChannel != null) {
-
-            response = givenChannel.channelId;
-        }
-
-        const ChanManager = new GuildChannelManager(guildId);
+        channelManager.fetch().forEach(channel => {
+            console.log(channel.name)
+        });
 
         var channelList = [];
         if (channel != undefined) { channelList.push(channel); }
