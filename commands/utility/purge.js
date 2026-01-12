@@ -13,7 +13,8 @@ export async function execute(interaction) {
         console.log(interaction.guildId);
         console.log()
         const guildId = interaction.guildId;
-        const guild = Guild.fetch(guildId);
+        const guild = new Guild();
+        guild.fetch(guildId);
 
         var channel = new ChannelManager();
 
