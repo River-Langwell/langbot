@@ -16,11 +16,13 @@ export async function execute(interaction) {
 
         const guild = await client.guilds.fetch(interaction.guildId);
 
+        var allChannels = new Collection();
 
         console.log(guild.name);
 
-        const channels = guild.channels.fetch();
-        console.log(channels);
+        allChannels = guild.channels.fetch();
+
+        console.log();
         // console.log()
 
 
