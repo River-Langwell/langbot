@@ -16,9 +16,17 @@ export async function execute(interaction) {
 
         const guild = await client.guilds.fetch(interaction.guildId);
 
+
         console.log(guild.name);
 
-        console.log(guild.channels.fetch().name);
+        const channels = guild.channels.filter(c => c.type == 'text').array();
+
+        channels.forEach(c => {
+            console.log(c.name);
+        })
+        // console.log()
+
+
 
     }
     catch (error) { console.log(error) }
