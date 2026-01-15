@@ -1,5 +1,7 @@
 import fs, { readFile } from 'node:fs';
 
+export const LangLibrary = new LanguageLibrary();
+
 export class LanguageLibrary {
     constructor() {
 
@@ -44,7 +46,7 @@ export class languageEntry {
     //method ===> methodName() { return; }
 }
 
-export class languageGuildConfig {
+export class LanguageGuildConfig {
     constructor(langEntry) {
         this.primaryRoleName = langEntry.language;
         this.roleList = [
@@ -72,6 +74,23 @@ export class languageGuildConfig {
         this.sw = `🟡「･${langEntry.south}･𐃫･${langEntry.west}･」🟣`;
         this.se = `🟡「･${langEntry.south}･𐃫･${langEntry.east}･」🟠`;
         this.ew = `🟠「･${langEntry.east}･𐃫･${langEntry.west}･」🟣`;
+
+        this.ChannelList = [
+            this.r5_channel,
+            this.general,
+            this.expedition,
+            this.agreement,
+            this.north,
+            this.south,
+            this.east,
+            this.west,
+            this.nw,
+            this.ne,
+            this.ns,
+            this.sw,
+            this.se,
+            this.ew,
+        ];
     }
 }
 

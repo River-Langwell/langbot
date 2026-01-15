@@ -1,5 +1,6 @@
 import { SlashCommandBuilder } from 'discord.js';
 
+
 export const data = new SlashCommandBuilder()
     .setName('purge')
     .setDescription('purge all messages from the selected channel(s).')
@@ -16,14 +17,17 @@ export async function execute(interaction) {
 
         const guild = await client.guilds.fetch(interaction.guildId);
 
+        const channel = await client.guilds.fetch(interaction.channelId);
+
+        console.log(channel.name);
 
         console.log(guild.name);
 
-        const allChannels = await guild.channels.fetch();
+        //const allChannels = await guild.channels.fetch();
 
-        allChannels.forEach(channel => {
-            console.log(channel.name);
-        })
+        //allChannels.forEach(channel => { console.log(channel.name); })
+
+
 
         // console.log()
 

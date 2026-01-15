@@ -4,7 +4,13 @@ import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { LanguageLibrary, languageEntry } from './src/languageReader.js';
 import config from './config.json' with {type: 'json'};
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent
+	]
+});
 
 const clientId = config.clientId;
 const guildId = config.guildId;
