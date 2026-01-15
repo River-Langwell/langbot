@@ -29,18 +29,19 @@ export async function execute(interaction) {
             if (fetchedMessages.size === 0) {
                 break;
             }
-
-            fetchedMessages.forEach(message => {
-                try {
-                    console.log(message.id);
-                    message.delete();
-                    pauseFunction();
-                }
-                catch { }
-                iterate++;
-            });
+            try {
+                fetchedMessages.forEach(message => {
+                    try {
+                        console.log(message.id);
+                        message.delete();
+                        pauseFunction();
+                    }
+                    catch { }
+                    iterate++;
+                });
+            }
+            catch { }
         }
-
         //const allChannels = await guild.channels.fetch();
 
         //allChannels.forEach(channel => { console.log(channel.name); })
@@ -58,6 +59,7 @@ export async function execute(interaction) {
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
 async function pauseFunction() {
     await delay(1000);
 }
