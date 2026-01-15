@@ -32,6 +32,7 @@ export async function execute(interaction) {
 
             fetchedMessages.forEach(message => {
                 try {
+                    console.log(message.id);
                     message.delete();
                     pauseFunction();
                 }
