@@ -31,7 +31,10 @@ export async function execute(interaction) {
             }
 
             fetchedMessages.forEach(message => {
-                try { message.delete(); }
+                try {
+                    message.delete();
+                    pauseFunction();
+                }
                 catch { }
                 iterate++;
             });
@@ -51,10 +54,9 @@ export async function execute(interaction) {
     });
 }
 
-
-async function purgeMessages(channel) {
-
-    let iterate = 0;
-
-
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function pauseFunction() {
+    await delay(1000);
 }
