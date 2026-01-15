@@ -21,6 +21,10 @@ export async function execute(interaction) {
 
         console.log(guild.name);
 
+
+
+
+
         //const allChannels = await guild.channels.fetch();
 
         //allChannels.forEach(channel => { console.log(channel.name); })
@@ -37,4 +41,25 @@ export async function execute(interaction) {
     await interaction.followUp({
         content: interaction.channelId
     });
+}
+
+
+async function purgeMessages(channel) {
+
+    let messages = [];
+    let lastMessageId;
+    let iterate = 0;
+
+    while (true) {
+        const fetchedMessages = await channel.messages.fetch({ limit: 100 });
+
+        if (fetchedMessages.size === 0) {
+            break;
+        }
+
+        fetchedMessages.forEach(message => {
+            message.delete();
+            iterate++;
+        });
+    }
 }
