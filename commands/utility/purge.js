@@ -19,8 +19,6 @@ export async function execute(interaction) {
 
         const channel = await guild.fetch(interaction.channelId);
 
-        console.log(channel.name);
-
         console.log(guild.name);
 
         //const allChannels = await guild.channels.fetch();
@@ -37,6 +35,6 @@ export async function execute(interaction) {
     catch (error) { console.log(error) }
 
     await interaction.followUp({
-        content: interaction.options.getChannel('channel').name
+        content: interaction.channelId
     });
 }
