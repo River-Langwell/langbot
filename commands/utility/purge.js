@@ -17,10 +17,11 @@ export async function execute(interaction) {
 
         const guild = await client.guilds.fetch(interaction.guildId);
 
-        const channel = await guild.fetch(interaction.channelId);
+        let channel = await guild.fetch(interaction.channelId);
 
         console.log(guild.name);
 
+        console.log(channel.channelId);
 
         purgeMessages(channel);
 
@@ -46,8 +47,6 @@ export async function execute(interaction) {
 
 async function purgeMessages(channel) {
 
-    let messages = [];
-    let lastMessageId;
     let iterate = 0;
 
     while (true) {
