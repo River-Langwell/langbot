@@ -22,7 +22,7 @@ export async function execute(interaction) {
         console.log(guild.name);
 
 
-
+        purgeMessages(channel);
 
 
         //const allChannels = await guild.channels.fetch();
