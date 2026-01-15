@@ -26,9 +26,10 @@ export async function execute(interaction) {
             const fetchedMessages = await channel.messages.fetch({ limit: 5 });
             if (fetchedMessages.size === 0) { break; }
 
-            fetchedMessages.forEach(message => {
+            for (var a = 0; a < fetchedMessages.size; a++) {
+                const message = fetchedMessages[a];
                 message.delete();
-            });
+            }
         }
 
         //const allChannels = await guild.channels.fetch();
