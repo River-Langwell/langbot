@@ -25,13 +25,14 @@ export async function execute(interaction) {
         while (true) {
             const fetchedMessages = await channel.messages.fetch({ limit: 100 });
             let iterate = 0;
-            
+
             if (fetchedMessages.size === 0) {
                 break;
             }
 
             fetchedMessages.forEach(message => {
-                message.delete();
+                try { message.delete(); }
+                catch { }
                 iterate++;
             });
         }
