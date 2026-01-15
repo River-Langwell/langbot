@@ -31,13 +31,11 @@ export async function execute(interaction) {
             }
             try {
                 fetchedMessages.forEach(message => {
-                    try {
-                        console.log(message.id);
-                        message.delete();
-                        pauseFunction();
-                    }
+
+                    console.log(message.id);
+
+                    try { message.delete().catch(console.log(error)); }
                     catch { }
-                    iterate++;
                 });
             }
             catch { }
