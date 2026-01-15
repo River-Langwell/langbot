@@ -1,6 +1,6 @@
 import fs, { readFile } from 'node:fs';
 
-export const LangLibrary = new LanguageLibrary();
+
 
 export class LanguageLibrary {
     constructor() {
@@ -94,4 +94,4 @@ export class LanguageGuildConfig {
     }
 }
 
-
+export const LangLibrary = new LanguageLibrary();
