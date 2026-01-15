@@ -19,7 +19,7 @@ export async function execute(interaction) {
 
         console.log(guild.name);
 
-        const channel = await client.guild.fetch(interaction.channelId);
+        const channel = await client.channels.fetch(interaction.channelId);
         console.log(channel.name);
 
         purgeMessages(channel);
