@@ -22,7 +22,18 @@ export async function execute(interaction) {
         const channel = await client.channels.fetch(interaction.channelId);
         console.log(channel.name);
 
-        purgeMessages(channel);
+        while (true) {
+            const fetchedMessages = await channel.messages.fetch({ limit: 100 });
+
+            if (fetchedMessages.size === 0) {
+                break;
+            }
+
+            fetchedMessages.forEach(message => {
+                message.delete();
+                iterate++;
+            });
+        }
 
         //const allChannels = await guild.channels.fetch();
 
@@ -43,16 +54,5 @@ async function purgeMessages(channel) {
 
     let iterate = 0;
 
-    while (true) {
-        const fetchedMessages = await channel.messages.fetch({ limit: 100 });
 
-        if (fetchedMessages.size === 0) {
-            break;
-        }
-
-        fetchedMessages.forEach(message => {
-            message.delete();
-            iterate++;
-        });
-    }
 }
