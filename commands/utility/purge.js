@@ -17,24 +17,20 @@ export async function execute(interaction) {
 
         const guild = await client.guilds.fetch(interaction.guildId);
 
-        let channel = await guild.fetch(interaction.channelId);
+        const channel = await guild.fetch(interaction.channelId);
 
         console.log(guild.name);
 
         console.log(channel.channelId);
+        console.log(channel.messages.fetch({ limit: 100 }).size);
 
         purgeMessages(channel);
-
 
         //const allChannels = await guild.channels.fetch();
 
         //allChannels.forEach(channel => { console.log(channel.name); })
 
-
-
         // console.log()
-
-
 
     }
     catch (error) { console.log(error) }
