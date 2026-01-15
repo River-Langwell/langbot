@@ -23,19 +23,18 @@ export async function execute(interaction) {
         console.log(channel.name);
 
         while (true) {
-            const fetchedMessages = await channel.messages.fetch({ limit: 100 });
+            const fetchedMessages = await channel.messages.fetch({ limit: 3 });
             let iterate = 0;
 
             if (fetchedMessages.size === 0) {
                 break;
             }
+
             try {
                 fetchedMessages.forEach(message => {
 
-                    console.log(message.id);
-
-                    try { message.delete().catch(console.log(error)); }
-                    catch { }
+                    try { message.delete() }
+                    catch (error) { console.log(error); }
                 });
             }
             catch { }
