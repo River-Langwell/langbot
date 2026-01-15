@@ -17,7 +17,7 @@ export async function execute(interaction) {
 
         const guild = await client.guilds.fetch(interaction.guildId);
 
-        const channel = await client.guilds.fetch(interaction.channelId);
+        const channel = await guild.fetch(interaction.channelId);
 
         console.log(channel.name);
 
