@@ -24,7 +24,8 @@ export async function execute(interaction) {
 
         while (true) {
             try {
-                const fetchedMessages = channel.messages.fetch({ limit: 100, before: interaction.id });
+                const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
+
                 iterator = 0;
                 if (fetchedMessages.size === 0) { break; }
 
@@ -45,8 +46,4 @@ export async function execute(interaction) {
         }
     }
     catch (error) { console.log("I AM STUCK AT LINE 44!" + error.data) }
-
-    await interaction.followUp({
-        content: interaction.channelId
-    });
 }
