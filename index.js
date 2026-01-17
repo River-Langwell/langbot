@@ -1,6 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { Client, Collection, IntentsBitField } from './node_modules/discord.js/';
+
+import pkg from 'discord.js';
+const {Client, Collection, IntentsBitField} = pkg;
+//import { Client, Collection, IntentsBitField } from './node_modules/discord.js/';
 import { LanguageLibrary, languageEntry } from './src/languageReader.js';
 import config from './config.json' with {type: 'json'};
 
