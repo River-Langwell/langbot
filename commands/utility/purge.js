@@ -27,10 +27,17 @@ export async function execute(interaction) {
 
             if (fetchedMessages.size === 0) { break; }
 
-            fetchedMessages.forEach(message => {
-                try { message.delete(); }
-                catch { }
-            });
+            try {
+                fetchedMessages.forEach(message => {
+
+                    try { message.delete(); }
+                    catch (error) {
+                        console.log(error.data)
+
+                    }
+                });
+            }
+            catch (error) { console.log(error.data); }
         }
 
         //const allChannels = await guild.channels.fetch();
