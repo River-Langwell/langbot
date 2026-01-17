@@ -1,15 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
-//import { Client, Collection,GatewayIntentBits } from 'discord.js';
-const {Client, Events, GatewayIntentBits} = require('discord.js');
+import { Client, Collection, IntentsBitField } from 'discord.js';
 import { LanguageLibrary, languageEntry } from './src/languageReader.js';
 import config from './config.json' with {type: 'json'};
 
 const client = new Client({
 	intents: [
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.MessageContent
+		IntentsBitField.Flags.Guilds,
+		IntentsBitField.Flags.GuildMembers,
+		IntentsBitField.Flags.GuildMessages,
+		IntentsBitField.Flags.MessageContent
 	]
 });
 
