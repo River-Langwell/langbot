@@ -24,20 +24,23 @@ export async function execute(interaction) {
 
         while (true) {
             try {
-                const fetchedMessages =  channel.messages.fetch({ limit: 100, before: interaction.id });
-
+                const fetchedMessages = channel.messages.fetch({ limit: 100, before: interaction.id });
+                iterator = 0;
                 if (fetchedMessages.size === 0) { break; }
 
                 try {
                     fetchedMessages.forEach(message => {
-
+                        iterator++;
                         try { message.delete(); }
                         catch (error) {
                             console.log("I AM STUCK AT LINE 36!" + error.data)
                         }
+
                     });
                 }
                 catch (error) { console.log("I AM STUCK AT LINE 40!" + error.data); }
+
+                if (iterator > 101) { break; }
             } catch (error) { console.log("I AM STUCK AT LINE 41!" + error.data); }
         }
     }
