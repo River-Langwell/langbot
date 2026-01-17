@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { Client, Collection, GatewayIntentBits } from 'discord.js';
+import { Client, Collection } from 'discord.js';
 
 import pkg from 'discord.js';
 const { GatewayIntentBits } = pkg;
