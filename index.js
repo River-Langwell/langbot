@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { Client, Collection, GatewayIntentBits } from 'discord.js';
+import { Client, Collection } from 'discord.js';
+const { GatewayIntentBits } = import('discord.js');
 import { LanguageLibrary, languageEntry } from './src/languageReader.js';
 import config from './config.json' with {type: 'json'};
 
@@ -49,8 +50,8 @@ for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = await import(filePath);
 	if (event.once) {
-		try{client.once(event.name, (...args) => event.execute(...args));}
-		catch(error) {console.log("this is all okay.");}
+		try { client.once(event.name, (...args) => event.execute(...args)); }
+		catch (error) { console.log("this is all okay."); }
 	} else {
 		try { client.on(event.name, (...args) => event.execute(...args)); }
 		catch (error) { console.log("This is fine."); }
