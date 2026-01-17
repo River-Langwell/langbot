@@ -24,7 +24,7 @@ export async function execute(interaction) {
 
         while (true) {
             try {
-                const fetchedMessages = await channel.messages.fetch({ limit: 5 });
+                const fetchedMessages = await channel.messages.fetch({ limit: 5, before: interaction.Id });
 
                 if (fetchedMessages.size === 0) { break; }
 
