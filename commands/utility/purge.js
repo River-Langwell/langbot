@@ -27,7 +27,7 @@ export async function execute(interaction) {
             try {
                 const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id }).catch();
 
-                iterator = 0;
+                var iterator = 0;
                 if (fetchedMessages.size === 0) { break; }
 
                 try {
