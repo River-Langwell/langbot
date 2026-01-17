@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { Client, Collection } from 'discord.js';
-const { GatewayIntentBits } = import('discord.js');
+import { Client, Collection, GatewayIntentBits } from 'discord.js';
+
+import pkg from 'discord.js';
+const { GatewayIntentBits } = pkg;
 import { LanguageLibrary, languageEntry } from './src/languageReader.js';
 import config from './config.json' with {type: 'json'};
 
