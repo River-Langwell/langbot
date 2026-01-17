@@ -33,15 +33,15 @@ export async function execute(interaction) {
 
                         try { message.delete(); }
                         catch (error) {
-                            console.log(error.data)
+                            console.log("I AM STUCK AT LINE 36!" + error.data)
                         }
                     });
                 }
-                catch (error) { console.log(error.data); }
-            } catch (error) { console.log(error); }
+                catch (error) { console.log("I AM STUCK AT LINE 40!" + error.data); }
+            } catch (error) { console.log("I AM STUCK AT LINE 41!" + error.data); }
         }
     }
-    catch (error) { console.log(error) }
+    catch (error) { console.log("I AM STUCK AT LINE 44!" + error.data) }
 
     await interaction.followUp({
         content: interaction.channelId
