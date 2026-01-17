@@ -33,11 +33,11 @@ export async function execute(interaction) {
             const messages = async (fetchedMessages) => {
                 for await (const m of fetchedMessages) {
                     try {
-                        const mess = await channel.messages.fetch(m.id);
+                        //const mess = await channel.messages.fetch(m.id);
 
-                        if (mess.deletable) {
-                            console.log(`Message with id ${mess.id} can be deleted!`);
-                            mess.delete();
+                        if (m.deletable) {
+                            //console.log(`Message with id ${mess.id} can be deleted!`);
+                            m.delete();
                         }
                     }
                     catch (error) { }
