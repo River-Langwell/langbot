@@ -30,7 +30,7 @@ export async function execute(interaction) {
 
             if (fetchedMessages.size === 0) { break; }
 
-            const messages = async (message) => {
+            const messages = async (fetchedMessages) => {
                 for await (const m of fetchedMessages) {
                     try {
                         const mess = await channel.messages.fetch(m.id);
