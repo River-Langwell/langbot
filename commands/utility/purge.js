@@ -24,7 +24,7 @@ export async function execute(interaction) {
 
         while (true) {
             try {
-                const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
+                const fetchedMessages =  channel.messages.fetch({ limit: 100, before: interaction.id });
 
                 if (fetchedMessages.size === 0) { break; }
 
@@ -46,12 +46,4 @@ export async function execute(interaction) {
     await interaction.followUp({
         content: interaction.channelId
     });
-}
-
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function pauseFunction() {
-    await delay(1000);
 }
