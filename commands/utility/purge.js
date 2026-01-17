@@ -24,24 +24,25 @@ export async function execute(interaction) {
         console.log(channel.name);
 
         while (true) {
-            try {
-                const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
+            const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
 
-                var iterator = 0;
+            var iterator = 0;
 
-                if (fetchedMessages.size === 0) { break; }
+            if (fetchedMessages.size === 0) { break; }
 
-                try {
-                    fetchedMessages.forEach(message => {
-                        iterator++;
-                        if (message.deletable) {
-                            console.log(`Message with id ${message.id} can be deleted!`);
-                            message.delete();
+            const messages = async (message) => {
+                for (const m of fetchedMessages) {
+                    try {
+                        const mess = await channel.messages.fetch(m.id);
+                        if (mess.deletable) {
+                            console.log(`Message with id ${mess.id} can be deleted!`);
+                            mess.delete();
                         }
-                    });
-                }
-                catch (error) { console.log("I AM STUCK AT LINE 40!" + error.message); }
-            } catch (error) { console.log("I AM STUCK AT LINE 41!" + error.message); }
+                    }
+                    catch (error) { }
+
+                };
+            }
         }
     }
     catch (error) { console.log("I AM STUCK AT LINE 44!" + error.message) }
