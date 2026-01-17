@@ -24,7 +24,7 @@ export async function execute(interaction) {
 
         while (true) {
             try {
-                const fetchedMessages = await channel.messages.fetch({ limit: 5, before: interaction.Id });
+                const fetchedMessages = await channel.messages.fetch({ limit: 5, before: interaction.id });
 
                 if (fetchedMessages.size === 0) { break; }
 
@@ -40,13 +40,6 @@ export async function execute(interaction) {
                 catch (error) { console.log(error.data); }
             } catch (error) { console.log(error); }
         }
-
-        //const allChannels = await guild.channels.fetch();
-
-        //allChannels.forEach(channel => { console.log(channel.name); })
-
-        // console.log()
-
     }
     catch (error) { console.log(error) }
 
