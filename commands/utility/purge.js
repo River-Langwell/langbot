@@ -34,9 +34,11 @@ export async function execute(interaction) {
                 try {
                     fetchedMessages.forEach(message => {
                         iterator++;
-                        try { message.delete(); }
-                        catch (error) {
-                            console.log("I AM STUCK AT LINE 36!" + error.message)
+                        if (message.deletable) {
+                            try { message.delete(); }
+                            catch (error) {
+                                console.log("I AM STUCK AT LINE 36!" + error.message)
+                            }
                         }
 
                     });
