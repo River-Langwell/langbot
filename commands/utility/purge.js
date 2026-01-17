@@ -28,12 +28,13 @@ export async function execute(interaction) {
                 const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id }).catch();
 
                 var iterator = 0;
+
                 if (fetchedMessages.size === 0) { break; }
 
                 try {
                     fetchedMessages.forEach(message => {
                         iterator++;
-                        try { message.delete().catch(); }
+                        try { message.delete(); }
                         catch (error) {
                             console.log("I AM STUCK AT LINE 36!" + error.message)
                         }
