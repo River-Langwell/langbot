@@ -7,6 +7,7 @@ export const data = new SlashCommandBuilder()
     .addChannelOption((option) => option.setName('channel').setDescription('The channel to purge all messages from; if no channel is selected, purging from default(s).'))
 
 export async function execute(interaction) {
+
     await interaction.reply('Beginning purge.');
 
     try {
@@ -24,7 +25,7 @@ export async function execute(interaction) {
 
         while (true) {
             try {
-                const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
+                const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id }).catch();
 
                 iterator = 0;
                 if (fetchedMessages.size === 0) { break; }
@@ -32,7 +33,7 @@ export async function execute(interaction) {
                 try {
                     fetchedMessages.forEach(message => {
                         iterator++;
-                        try { message.delete(); }
+                        try { message.delete().catch(); }
                         catch (error) {
                             console.log("I AM STUCK AT LINE 36!" + error.data)
                         }
