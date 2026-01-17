@@ -14,7 +14,7 @@ export async function execute(interaction) {
 	try {
 		await command.execute(interaction);
 	} catch (error) {
-		console.log(error.message);
+		console.log("I'M IN DANGER!");
 		console.error(error);
 		if (interaction.replied || interaction.deferred) {
 			await interaction.followUp({
