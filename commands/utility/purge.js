@@ -23,21 +23,22 @@ export async function execute(interaction) {
         console.log(channel.name);
 
         while (true) {
-            const fetchedMessages = await channel.messages.fetch({ limit: 5 });
-
-            if (fetchedMessages.size === 0) { break; }
-
             try {
-                fetchedMessages.forEach(message => {
+                const fetchedMessages = await channel.messages.fetch({ limit: 5 });
 
-                    try { message.delete(); }
-                    catch (error) {
-                        console.log(error.data)
+                if (fetchedMessages.size === 0) { break; }
 
-                    }
-                });
-            }
-            catch (error) { console.log(error.data); }
+                try {
+                    fetchedMessages.forEach(message => {
+
+                        try { message.delete(); }
+                        catch (error) {
+                            console.log(error.data)
+                        }
+                    });
+                }
+                catch (error) { console.log(error.data); }
+            } catch (error) { console.log(error); }
         }
 
         //const allChannels = await guild.channels.fetch();
