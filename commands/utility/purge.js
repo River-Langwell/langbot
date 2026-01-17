@@ -35,6 +35,7 @@ export async function execute(interaction) {
                     fetchedMessages.forEach(message => {
                         iterator++;
                         if (message.deletable) {
+                            console.log(`Message with id ${message.id} can be deleted!`);
                             try { message.delete(); }
                             catch (error) {
                                 console.log("I AM STUCK AT LINE 36!" + error.message)
