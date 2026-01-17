@@ -25,7 +25,7 @@ export async function execute(interaction) {
 
         while (true) {
             try {
-                const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id }).catch();
+                const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
 
                 var iterator = 0;
 
@@ -36,12 +36,8 @@ export async function execute(interaction) {
                         iterator++;
                         if (message.deletable) {
                             console.log(`Message with id ${message.id} can be deleted!`);
-                            try { message.delete(); }
-                            catch (error) {
-                                console.log("I AM STUCK AT LINE 36!" + error.message)
-                            }
+                            message.delete();
                         }
-
                     });
                 }
                 catch (error) { console.log("I AM STUCK AT LINE 40!" + error.message); }
