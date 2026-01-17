@@ -35,16 +35,14 @@ export async function execute(interaction) {
                         iterator++;
                         try { message.delete().catch(); }
                         catch (error) {
-                            console.log("I AM STUCK AT LINE 36!" + error.data)
+                            console.log("I AM STUCK AT LINE 36!" + error.message)
                         }
 
                     });
                 }
-                catch (error) { console.log("I AM STUCK AT LINE 40!" + error.data); }
-
-                if (iterator > 101) { break; }
-            } catch (error) { console.log("I AM STUCK AT LINE 41!" + error.data); }
+                catch (error) { console.log("I AM STUCK AT LINE 40!" + error.message); }
+            } catch (error) { console.log("I AM STUCK AT LINE 41!" + error.message); }
         }
     }
-    catch (error) { console.log("I AM STUCK AT LINE 44!" + error.data) }
+    catch (error) { console.log("I AM STUCK AT LINE 44!" + error.message) }
 }
