@@ -24,12 +24,14 @@ export async function execute(interaction) {
         console.log(channel.name);
 
         while (true) {
-            const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
-            let array = [...fetchedMessages];
-            console.log(array.length);
-            for (var m = 0; m < array.length; m++) {
-                if (array[m].deletable) { array[m].delete(); }
-            }
+
+            
+            const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id })
+                .then(data => {
+                    if (fetchedMessages.size === 0) { }
+                    let messageArr = [...data];
+                    console.log(data[0][1]);
+                });
 
         }
     }
