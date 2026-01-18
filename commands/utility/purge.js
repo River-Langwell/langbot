@@ -24,25 +24,15 @@ export async function execute(interaction) {
         console.log(channel.name);
 
         while (true) {
-            const fetchedMessages = await channel.messages.fetch({ limit: 100, before: interaction.id });
-            if (fetchedMessages.size === 0) { break; }
-
-            const messages = async (fetchedMessages) => {
-                for (const m of fetchedMessages) {
-                    try {
-                        //const mess = await channel.messages.fetch(m.id);
-
-                        if (m.deletable) {
-                            //console.log(`Message with id ${mess.id} can be deleted!`);
-                           messageDelete(m);
-                        }
-                    }
-                    catch (error) { }
-
-                };
+            const fetchedMessages = await channel.messages.fetch({ limit: 1, before: interaction.id });
+            let array = [...fetchedMessages];
+            for (var m = 0; m < array.length; m++) {
+                if (array[m].deletable) { array[m].delete(); }
             }
+
         }
     }
+
     catch (error) { console.log("I AM STUCK AT LINE 44!" + error.message) }
 }
 
