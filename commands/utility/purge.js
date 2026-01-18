@@ -1,10 +1,11 @@
-import { SlashCommandBuilder } from 'discord.js';
+import { PermissionFlagsBits, SlashCommandBuilder } from 'discord.js';
 
 
 export const data = new SlashCommandBuilder()
     .setName('purge')
     .setDescription('purge all messages from the selected channel(s).')
     .addChannelOption((option) => option.setName('channel').setDescription('The channel to purge all messages from; if no channel is selected, purging from default(s).'))
+    .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels | PermissionFlagsBits.ManageMessages);
 
 export async function execute(interaction) {
 
@@ -39,9 +40,5 @@ export async function execute(interaction) {
 
     catch (error) { console.log("I AM STUCK AT LINE 44!" + error.message) }
 
-    await interaction.followUp('purge complete.')
-}
-
-async function messageDelete(message) {
-    await message.delete();
+    await interaction.editReply('purge complete.');
 }
