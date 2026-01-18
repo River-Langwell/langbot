@@ -3,7 +3,7 @@ import { PermissionFlagsBits, SlashCommandBuilder } from 'discord.js';
 export const data = new SlashCommandBuilder()
     .setName('purge')
     .setDescription('purge all messages from the current channel.')
-    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator);
+    .setDefaultMemberPermissions(0);
 
 export async function execute(interaction) {
 
