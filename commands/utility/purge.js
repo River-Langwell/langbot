@@ -34,6 +34,8 @@ export async function execute(interaction) {
     }
 
     catch (error) { console.log("I AM STUCK AT LINE 44!" + error.message) }
+
+    await interaction.followUp('purge complete.')
 }
 
 async function messageDelete(message) {
